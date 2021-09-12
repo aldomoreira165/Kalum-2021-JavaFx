@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteSalones" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="fe487bfb-9ac7-4703-ad40-93808ffcfa42">
+	<property name="ireport.zoom" value="1.3310000000000004"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="LOGO_KALUM" class="java.io.InputStream"/>
+	<parameter name="LOGO_FOOTER" class="java.io.InputStream"/>
+	<queryString>
+		<![CDATA[select * from salon;]]>
+	</queryString>
+	<field name="salon_id" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="capacidad" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="descripcion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombreSalon" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="93">
+			<staticText>
+				<reportElement x="182" y="30" width="157" height="20" uuid="5093a6d1-e13c-4148-a675-cfa0a9d30bcd"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Guatemala, Guatemala]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="10" width="503" height="20" uuid="ff3f3cf5-2c6e-4863-a241-f4a651a57cf6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ Sistema de Control Académico Kalum v1.0.0]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="433" y="50" width="100" height="20" uuid="4b41f6a6-e89a-4d4c-80f3-f38ea3e23aef"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="0" y="-9" width="132" height="59" uuid="4daf976d-b9f2-4768-925b-5cb34381afec"/>
+				<imageExpression><![CDATA[$P{LOGO_KALUM}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="50">
+			<staticText>
+				<reportElement x="0" y="30" width="100" height="20" uuid="a2922daf-aca5-4ed7-b5bc-bd1b74e4fae8"/>
+				<text><![CDATA[ID SALÓN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="30" width="100" height="20" uuid="6ab241aa-1794-4d6e-ad8a-9ed86c3fd974"/>
+				<text><![CDATA[CAPACIDAD]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="215" y="30" width="110" height="20" uuid="b7842e77-f2bd-4144-a871-25aee161134b"/>
+				<text><![CDATA[DESCRIPCIÓN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="408" y="30" width="100" height="20" uuid="fb96fa7b-cbc1-46cc-8e73-253ed3917de2"/>
+				<text><![CDATA[NOMBRE DE SALÓN]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="22" splitType="Stretch">
+			<rectangle radius="1">
+				<reportElement x="0" y="0" width="555" height="20" uuid="abd79a52-961a-43e7-9da7-4a0b48d0221f"/>
+			</rectangle>
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20" uuid="7ed43e55-d948-436f-8522-1f6c8dff90f0"/>
+				<textFieldExpression><![CDATA[$F{salon_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="0" width="115" height="20" uuid="c88a6640-5d5f-4a0a-9cde-c063500b003c"/>
+				<textFieldExpression><![CDATA[$F{capacidad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="215" y="0" width="193" height="20" uuid="b32ebb3e-048d-4642-8f34-8e01682981d4"/>
+				<textFieldExpression><![CDATA[$F{descripcion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="408" y="0" width="147" height="20" uuid="2e6715a6-aa29-490c-8471-3f944a6a3666"/>
+				<textFieldExpression><![CDATA[$F{nombreSalon}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="59" splitType="Stretch">
+			<textField>
+				<reportElement x="215" y="39" width="100" height="20" uuid="e31d5b32-960e-42c4-8615-ac4af58d1dcd"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="148" y="5" width="260" height="34" uuid="c9c9882c-ba4c-4526-8199-afa77ebe84dd"/>
+				<imageExpression><![CDATA[$P{LOGO_FOOTER}]]></imageExpression>
+			</image>
+		</band>
+	</pageFooter>
+</jasperReport>

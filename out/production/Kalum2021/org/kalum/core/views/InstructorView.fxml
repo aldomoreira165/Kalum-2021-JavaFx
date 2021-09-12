@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="1085.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.kalum.core.controllers.InstructorController">
+    <children>
+        <TableView fx:id="tblInstructor" layoutX="53.0" layoutY="100.0" prefHeight="232.0" prefWidth="979.0">
+            <columns>
+                <TableColumn fx:id="colIdInstructor" prefWidth="61.000030517578125" text="ID" />
+                <TableColumn fx:id="colApellidos" minWidth="0.0" prefWidth="171.0" text="Apellidos" />
+                <TableColumn fx:id="colComentario" prefWidth="126.0" text="Comentario" />
+                <TableColumn fx:id="colDireccion" prefWidth="104.0" text="Dirección" />
+                <TableColumn fx:id="colEstatus" minWidth="0.0" prefWidth="103.0" text="Estatus" />
+                <TableColumn fx:id="colFoto" prefWidth="57.0" text="Foto" />
+                <TableColumn fx:id="colNombres" minWidth="0.0" prefWidth="159.0" text="Nombres" />
+                <TableColumn fx:id="colTelefono" minWidth="0.0" prefWidth="503.0" text="Teléfono                                                                               " />
+            </columns>
+        </TableView>
+        <Button layoutX="233.0" layoutY="355.0" mnemonicParsing="false" onAction="#mostrarEscenaInstructoresCUView" prefHeight="26.0" prefWidth="119.0" text="Nuevo" />
+        <Button layoutX="368.0" layoutY="355.0" mnemonicParsing="false" onAction="#eliminarInstructor" prefHeight="26.0" prefWidth="119.0" text="Eliminar" />
+        <Button layoutX="502.0" layoutY="355.0" mnemonicParsing="false" onAction="#mostrarVentanaInstructorUpdate" prefHeight="26.0" prefWidth="119.0" text="Modificar" />
+        <Button layoutX="633.0" layoutY="355.0" mnemonicParsing="false" onAction="#generarReporte" prefHeight="26.0" prefWidth="119.0" text="Reporte" />
+      <ImageView fitHeight="55.0" fitWidth="72.0" layoutX="7.0" layoutY="14.0" onMouseClicked="#ventanaPrincipal" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resources/images/atras.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="21.0" fitWidth="979.0" layoutX="53.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resources/images/barra.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="79.0" layoutY="28.0" text="INSTRUCTORES">
+         <font>
+            <Font name="Calibri" size="32.0" />
+         </font>
+      </Label>
+    </children>
+</AnchorPane>

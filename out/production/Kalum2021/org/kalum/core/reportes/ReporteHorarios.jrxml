@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteHorarios" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ebee5ee3-e4bc-4646-9cff-51494c94d466">
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="51"/>
+	<parameter name="LOGO_KALUM" class="java.io.InputStream"/>
+	<parameter name="LOGO_FOOTER" class="java.io.InputStream"/>
+	<queryString>
+		<![CDATA[SELECT
+horario.`horario_id` AS 'horario_id',
+DATE_FORMAT(horario.`horario_final`,"%H:%i:%S") AS 'horario_final',
+DATE_FORMAT(horario.`horario_inicio`,"%H:%i:%S") AS 'horario_inicio'
+FROM
+`horario` horario ]]>
+	</queryString>
+	<field name="horario_id" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="horario_final" class="java.lang.String"/>
+	<field name="horario_inicio" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="197" y="20" width="157" height="20" uuid="827b4388-55d3-42ca-9115-8b71f32806c6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Guatemala, Guatemala]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="25" y="0" width="503" height="20" uuid="2a54791e-d381-4c1b-8cb0-89c365f46b16"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ Sistema de Control Académico Kalum v1.0.0]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="0" width="149" height="59" uuid="b567ff02-14d0-434c-a409-3ee663f18f96"/>
+				<imageExpression><![CDATA[$P{LOGO_KALUM}]]></imageExpression>
+			</image>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="439" y="55" width="100" height="20" uuid="1a64b1d2-fc3a-4005-af62-8402ca9675cd"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="41" width="100" height="20" uuid="c8df859e-69f0-480c-b2cc-da70cf5e9d13"/>
+				<text><![CDATA[ID DE HORARIO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="405" y="41" width="100" height="20" uuid="e9ba6aad-87a2-4954-a85b-145143a54152"/>
+				<text><![CDATA[HORA FINAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="190" y="41" width="100" height="20" uuid="2c0111ec-4ff2-4a46-848d-74e506228aa2"/>
+				<text><![CDATA[HORA INICIAL]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="22" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="505" height="22" uuid="23f20879-dbd7-417a-95b4-efea06e1b534"/>
+			</rectangle>
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20" uuid="2e8b1a05-273d-4f89-83f8-a47a095bf685"/>
+				<textFieldExpression><![CDATA[$F{horario_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="416" y="0" width="139" height="20" uuid="62fde4d5-0dff-44f1-8dc2-e04c6295eb94"/>
+				<textFieldExpression><![CDATA[$F{horario_final}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="190" y="0" width="100" height="20" uuid="24f08783-f3ff-47fa-aa29-2fabcd94e9b8"/>
+				<textFieldExpression><![CDATA[$F{horario_inicio}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="85" splitType="Stretch">
+			<image>
+				<reportElement x="156" y="17" width="260" height="34" uuid="b6132dd2-8102-4dfb-a598-6714d1c9be73"/>
+				<imageExpression><![CDATA[$P{LOGO_FOOTER}]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="238" y="65" width="100" height="20" uuid="1ce3b625-022e-4dbd-ba2c-8fc4914747d9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

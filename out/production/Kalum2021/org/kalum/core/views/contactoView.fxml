@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="401.0" prefWidth="599.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.kalum.core.controllers.ContactoController">
+   <children>
+      <Label layoutX="50.0" layoutY="56.0" prefHeight="39.0" prefWidth="327.0" text="Aldo Saúl Vásquez Moreira" />
+      <Label layoutX="50.0" layoutY="82.0" prefHeight="39.0" prefWidth="327.0" text="aldovasque@gmail.com" />
+      <Label layoutX="50.0" layoutY="26.0" prefHeight="39.0" prefWidth="327.0" text="CONTACTO:" />
+      <Label layoutX="50.0" layoutY="110.0" prefHeight="39.0" prefWidth="327.0" text="+502 3509-1272" />
+      <Label layoutX="50.0" layoutY="142.0" prefHeight="39.0" prefWidth="327.0" text="Junio del 2021" />
+      <Label layoutX="75.0" layoutY="195.0" prefHeight="30.0" prefWidth="462.0" text="Kalum2021 es un programa orientado al área empresarial, el cual " />
+      <Label layoutX="75.0" layoutY="225.0" prefHeight="30.0" prefWidth="462.0" text="implementa diversas tecnologías actuales para su propia efectividad" />
+      <Label layoutX="75.0" layoutY="255.0" prefHeight="30.0" prefWidth="462.0" text="la cual viene perfecta para almacenar la data de la empresa en un" />
+      <Label layoutX="75.0" layoutY="285.0" prefHeight="30.0" prefWidth="462.0" text="sitio confiable y seguro." />
+      <ImageView fitHeight="53.0" fitWidth="59.0" layoutX="511.0" layoutY="19.0" onMouseClicked="#menuPrincipal" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resources/images/atras.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="117.0" fitWidth="96.0" layoutX="281.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resources/images/foto.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="116.0" fitWidth="370.0" layoutX="121.0" layoutY="326.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resources/images/logotipo.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
+              name="ReporteCarreraTecnica" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555"
+              leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20"
+              uuid="38f96650-45a8-49fa-b869-6b59ce4aca29">
+    <property name="ireport.zoom" value="1.3310000000000004"/>
+    <property name="ireport.x" value="0"/>
+    <property name="ireport.y" value="0"/>
+    <parameter name="LOGO_KALUM" class="java.io.InputStream"/>
+    <parameter name="LOGO_FOOTER" class="java.io.InputStream"/>
+    <queryString>
+        <![CDATA[select * from carrera_tecnica;]]>
+    </queryString>
+    <field name="codigo_carrera" class="java.lang.String">
+        <fieldDescription><![CDATA[]]></fieldDescription>
+    </field>
+    <field name="nombre" class="java.lang.String">
+        <fieldDescription><![CDATA[]]></fieldDescription>
+    </field>
+    <background>
+        <band splitType="Stretch"/>
+    </background>
+    <title>
+        <band height="79" splitType="Stretch">
+            <textField pattern="EEEEE dd MMMMM yyyy">
+                <reportElement x="454" y="40" width="100" height="20" uuid="2616e4b1-ef08-41ac-bcb5-2523dfae07f2"/>
+                <textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement x="31" y="0" width="503" height="20" uuid="9d1b49aa-6092-443d-9ccb-2e72197e2437"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font size="12" isBold="true"/>
+                </textElement>
+                <text><![CDATA[ Sistema de Control Académico Kalum v1.0.0]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="203" y="20" width="157" height="20" uuid="1e2b5c5f-933a-40dd-bfdd-aef2f6cb2aa5"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle"/>
+                <text><![CDATA[Guatemala, Guatemala]]></text>
+            </staticText>
+            <image>
+                <reportElement x="0" y="0" width="136" height="59" uuid="a1c6e3d4-eb34-4ab5-9b76-589de4f4d492"/>
+                <imageExpression><![CDATA[$P{LOGO_KALUM}]]></imageExpression>
+            </image>
+        </band>
+    </title>
+    <columnHeader>
+        <band height="61" splitType="Stretch">
+            <staticText>
+                <reportElement x="136" y="41" width="120" height="20" uuid="0e003c26-e9c4-453e-abfb-7bafde8548c8"/>
+                <text><![CDATA[CÓDIGO DE CARRERA]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="256" y="41" width="135" height="20" uuid="bc6bc553-de0f-499a-b6c5-ed2ca5129401"/>
+                <text><![CDATA[NOMBRE DE CARRERA]]></text>
+            </staticText>
+        </band>
+    </columnHeader>
+    <detail>
+        <band height="24" splitType="Stretch">
+            <rectangle radius="1">
+                <reportElement x="0" y="0" width="554" height="24" uuid="25aa9c23-f854-4e9b-896f-337d32468945"/>
+            </rectangle>
+            <textField>
+                <reportElement x="136" y="0" width="120" height="20" uuid="d7cdd013-43bc-4d62-91e3-fc9fe1a170ee"/>
+                <textFieldExpression><![CDATA[$F{codigo_carrera}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="256" y="0" width="204" height="20" uuid="a8e60a2f-b6ba-47a8-b0d8-c0d5c5aed300"/>
+                <textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+            </textField>
+        </band>
+    </detail>
+    <pageFooter>
+        <band height="75" splitType="Stretch">
+            <textField>
+                <reportElement x="236" y="55" width="100" height="20" uuid="17f7c261-8b10-469c-9500-335726077137"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle"/>
+                <textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+            </textField>
+            <image>
+                <reportElement x="163" y="11" width="260" height="34" uuid="ff23ed0c-314e-4f73-9354-f788cadc6b3a"/>
+                <imageExpression><![CDATA[$P{LOGO_FOOTER}]]></imageExpression>
+            </image>
+        </band>
+    </pageFooter>
+</jasperReport>

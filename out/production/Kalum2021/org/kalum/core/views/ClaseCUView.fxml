@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="486.0" prefWidth="587.0" xmlns="http://javafx.com/javafx/8.0.171"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.kalum.core.controllers.ClaseCUController">
+    <children>
+        <Label layoutX="76.0" layoutY="112.0" text="Ciclo"/>
+        <Spinner fx:id="numCiclo" layoutX="185.0" layoutY="107.0" prefHeight="31.0" prefWidth="215.0"/>
+        <Label layoutX="76.0" layoutY="153.0" text="Cupo Máximo"/>
+        <Label layoutX="77.0" layoutY="192.0" text="Cupo Mínimo"/>
+        <Label layoutX="76.0" layoutY="72.0" prefHeight="21.0" prefWidth="84.0" text="Descripción"/>
+        <TextField fx:id="txtDescripcion" layoutX="185.0" layoutY="67.0" prefHeight="31.0" prefWidth="365.0"
+                   promptText="Descripción de la clase"/>
+        <ComboBox fx:id="cmbCarrera" layoutX="185.0" layoutY="225.0" prefHeight="18.0" prefWidth="215.0"
+                  promptText="Seleccionar"/>
+        <Label layoutX="77.0" layoutY="230.0" text="Carrera"/>
+        <ComboBox fx:id="cmbHorario" layoutX="184.0" layoutY="263.0" prefHeight="18.0" prefWidth="215.0"
+                  promptText="Seleccionar"/>
+        <Label layoutX="77.0" layoutY="268.0" prefHeight="21.0" prefWidth="62.0" text="Horario"/>
+        <ComboBox fx:id="cmbInstructor" layoutX="185.0" layoutY="304.0" prefHeight="18.0" prefWidth="215.0"
+                  promptText="Seleccionar"/>
+        <Label layoutX="78.0" layoutY="309.0" prefHeight="21.0" prefWidth="74.0" text="Instructor"/>
+        <ComboBox fx:id="cmbSalon" layoutX="184.0" layoutY="343.0" prefHeight="18.0" prefWidth="215.0"
+                  promptText="Seleccionar"/>
+        <Label layoutX="78.0" layoutY="348.0" prefHeight="21.0" prefWidth="74.0" text="Salón"/>
+        <Spinner fx:id="numMaximo" layoutX="184.0" layoutY="148.0" prefHeight="31.0" prefWidth="215.0"/>
+        <Spinner fx:id="numMinimo" layoutX="186.0" layoutY="187.0" prefHeight="31.0" prefWidth="215.0"/>
+        <Button layoutX="270.0" layoutY="399.0" mnemonicParsing="false" onAction="#guardar" prefHeight="53.0"
+                prefWidth="141.0" text="Guardar"/>
+        <Button layoutX="420.0" layoutY="399.0" mnemonicParsing="false" onAction="#cancelar" prefHeight="53.0"
+                prefWidth="141.0" text="Cancelar"/>
+    </children>
+</AnchorPane>

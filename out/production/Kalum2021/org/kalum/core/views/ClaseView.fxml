@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="407.0" prefWidth="771.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.kalum.core.controllers.ClaseController">
+    <children>
+        <TableView fx:id="tblClase" layoutX="36.0" layoutY="93.0" prefHeight="232.0" prefWidth="698.0">
+            <columns>
+                <TableColumn fx:id="colDescripcion" prefWidth="181.0" text="Descripción" />
+                <TableColumn fx:id="colCiclo" prefWidth="63.0" text="Ciclo" />
+                <TableColumn fx:id="colCarrera" prefWidth="79.0" text="Carrera" />
+                <TableColumn fx:id="colHorario" minWidth="5.0" prefWidth="89.0" text="Horario" />
+                <TableColumn fx:id="colInstructor" minWidth="5.0" prefWidth="93.0" text="Instructor" />
+                <TableColumn fx:id="colSalon" minWidth="5.0" prefWidth="91.0" text="Salón" />
+                <TableColumn fx:id="colCupo" minWidth="5.0" prefWidth="101.0" text="Cupo" />
+            </columns>
+        </TableView>
+        <Label layoutX="69.0" layoutY="18.0" text="CLASES">
+         <font>
+            <Font name="Calibri" size="32.0" />
+         </font></Label>
+        <ImageView fitHeight="21.0" fitWidth="698.0" layoutX="32.0" layoutY="63.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../resources/images/barra.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="53.0" fitWidth="59.0" layoutX="6.0" layoutY="10.0" onMouseClicked="#mostrarMenuPrincipal" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../resources/images/atras.png" />
+            </image>
+        </ImageView>
+        <Button layoutX="83.0" layoutY="342.0" mnemonicParsing="false" onAction="#mostrarVentanaClaseCU" prefHeight="37.0" prefWidth="141.0" text="Nuevo" />
+        <Button layoutX="235.0" layoutY="342.0" mnemonicParsing="false" onAction="#mostrarVentanaClaseCUActualizar" prefHeight="37.0" prefWidth="141.0" text="Modificar" />
+        <Button layoutX="386.0" layoutY="342.0" mnemonicParsing="false" onAction="#eliminarClase" prefHeight="37.0" prefWidth="141.0" text="Eliminar" />
+        <Button layoutX="538.0" layoutY="342.0" mnemonicParsing="false" onAction="#generarReporte" prefHeight="37.0" prefWidth="141.0" text="Reporte" />
+    </children>
+</AnchorPane>

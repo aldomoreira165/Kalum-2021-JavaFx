@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteAlumnos" language="groovy" pageWidth="792" pageHeight="612" orientation="Landscape" columnWidth="752" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="15d304bf-d46a-40ae-93b0-cf0ad3d8d861">
+	<property name="ireport.zoom" value="1.6105100000000008"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<subDataset name="dataset1" uuid="a22d3502-9e07-4c70-8aec-e8f69083c9fa"/>
+	<parameter name="LOGO_KALUM" class="java.io.InputStream"/>
+	<parameter name="LOGO_FOOTER" class="java.io.InputStream"/>
+	<queryString>
+		<![CDATA[SELECT
+clase.`ciclo` AS CICLO,
+CONCAT(clase.`cupo_maximo`,' | ',clase.`cupo_minimo`) AS CUPO,
+clase.`descripcion` AS DESCRIPCION,
+concat(instructor.`apellidos`, ' ', instructor.`nombres`) AS INSTRUCTOR,
+carrera_tecnica.`nombre` AS CARRERA,
+salon.`nombreSalon` AS SALON,
+concat(time_format(horario.`horario_inicio`, '%H:%i'),' ',time_format(horario.`horario_final`,'%H:%i')) AS HORARIO
+FROM
+`instructor` instructor INNER JOIN `clase` clase ON instructor.`instructor_id` = clase.`instructor_id`
+INNER JOIN `carrera_tecnica` carrera_tecnica ON clase.`codigo_carrera` = carrera_tecnica.`codigo_carrera`
+INNER JOIN `salon` salon ON clase.`salon_id` = salon.`salon_id`
+INNER JOIN `horario` horario ON clase.`horario_id` = horario.`horario_id`
+order by clase.ciclo asc]]>
+	</queryString>
+	<field name="CICLO" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="CUPO" class="java.lang.String"/>
+	<field name="DESCRIPCION" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="INSTRUCTOR" class="java.lang.String"/>
+	<field name="CARRERA" class="java.lang.String"/>
+	<field name="SALON" class="java.lang.String"/>
+	<field name="HORARIO" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="43" y="14" width="709" height="20" uuid="09745c64-97da-4866-9fe8-bc2871cb5172"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ Sistema de Control Académico Kalum v1.0.0]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="304" y="34" width="157" height="20" uuid="b1ed3669-672e-4941-9e5c-5d4e95eb716c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Guatemala, Guatemala]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="472" y="59" width="100" height="20" uuid="8b30e3f3-9004-4623-b79c-f20579f0e91e"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="10" y="14" width="149" height="59" uuid="38d264ec-dad3-4005-a594-86831ccbd9a4"/>
+				<imageExpression><![CDATA[$P{LOGO_KALUM}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="41" width="73" height="20" uuid="aabc1332-8101-4eec-8ee8-e2b5a06e4381"/>
+				<text><![CDATA[CICLO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="73" y="41" width="147" height="20" uuid="e81a1141-ced0-42d3-8af6-410bc2d69e35"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[DESCRIPCIÓN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="220" y="41" width="69" height="20" uuid="13506ec4-640e-4666-9744-b809d7ba4957"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[CUPO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="289" y="41" width="91" height="20" uuid="b95d018f-8ea9-4fab-9077-4cac297ede6e"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[HORARIO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="380" y="41" width="130" height="20" uuid="6dd8e9f7-8457-4cb9-ab56-4c4c25794262"/>
+				<textElement verticalAlignment="Middle">
+					<font isUnderline="false" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[INSTRUCTOR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="510" y="41" width="140" height="20" uuid="6f9fbbb1-2260-496a-b25c-e0103561c727"/>
+				<textElement verticalAlignment="Middle">
+					<font isUnderline="false" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[CARRERA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="650" y="41" width="102" height="20" uuid="f7352c9e-e72f-437b-aebc-143b74698d49"/>
+				<textElement verticalAlignment="Middle">
+					<font isUnderline="false" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[SALÓN]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<rectangle radius="1">
+				<reportElement x="0" y="0" width="752" height="20" uuid="9243f4ff-28ae-43b0-bcdc-1fd3d45015db"/>
+			</rectangle>
+			<textField>
+				<reportElement x="0" y="0" width="73" height="20" uuid="1ce06046-76d2-405f-aa97-ec4a4c386d2c"/>
+				<textFieldExpression><![CDATA[$F{CICLO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="73" y="1" width="147" height="20" uuid="5f83e86c-5270-48c5-ac24-62988265dd3f"/>
+				<textFieldExpression><![CDATA[$F{DESCRIPCION}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="220" y="1" width="69" height="20" uuid="5e9c95b1-eeb7-4cd0-98de-f47887a8b0b5"/>
+				<textFieldExpression><![CDATA[$F{CUPO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="289" y="0" width="91" height="20" uuid="67b14704-e18f-4b9a-8728-e74966f500b9"/>
+				<textFieldExpression><![CDATA[$F{HORARIO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="380" y="1" width="130" height="20" uuid="a030ffc6-eb00-457a-9d35-648cfe988db0"/>
+				<textFieldExpression><![CDATA[$F{INSTRUCTOR}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="510" y="0" width="140" height="20" uuid="3a85b3d3-0fa8-4e82-8747-2dfacaddba09"/>
+				<textFieldExpression><![CDATA[$F{CARRERA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="650" y="1" width="102" height="20" uuid="1c5272fd-da4c-4b55-8f24-7d52ba8a6f14"/>
+				<textFieldExpression><![CDATA[$F{SALON}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="67" splitType="Stretch">
+			<textField>
+				<reportElement x="361" y="47" width="100" height="20" uuid="0352699e-dbb6-4832-9eaf-3aeb56b7aff9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="269" y="13" width="260" height="34" uuid="41d25335-f80d-46fc-bbbc-cd00cb5c9972"/>
+				<imageExpression><![CDATA[$P{LOGO_FOOTER}]]></imageExpression>
+			</image>
+		</band>
+	</pageFooter>
+</jasperReport>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
+              name="ReporteAlumnos" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20"
+              rightMargin="20" topMargin="20" bottomMargin="20" uuid="15d304bf-d46a-40ae-93b0-cf0ad3d8d861">
+    <property name="ireport.zoom" value="1.6105100000000008"/>
+    <property name="ireport.x" value="0"/>
+    <property name="ireport.y" value="0"/>
+    <subDataset name="dataset1" uuid="a22d3502-9e07-4c70-8aec-e8f69083c9fa"/>
+    <parameter name="LOGO_KALUM" class="java.io.InputStream"/>
+    <parameter name="LOGO_FOOTER" class="java.io.InputStream"/>
+    <queryString>
+        <![CDATA[select carne, no_expediente, apellidos, nombres, email from alumnos]]>
+    </queryString>
+    <field name="carne" class="java.lang.String">
+        <fieldDescription><![CDATA[]]></fieldDescription>
+    </field>
+    <field name="no_expediente" class="java.lang.String">
+        <fieldDescription><![CDATA[]]></fieldDescription>
+    </field>
+    <field name="apellidos" class="java.lang.String">
+        <fieldDescription><![CDATA[]]></fieldDescription>
+    </field>
+    <field name="nombres" class="java.lang.String">
+        <fieldDescription><![CDATA[]]></fieldDescription>
+    </field>
+    <field name="email" class="java.lang.String">
+        <fieldDescription><![CDATA[]]></fieldDescription>
+    </field>
+    <background>
+        <band splitType="Stretch"/>
+    </background>
+    <title>
+        <band height="79" splitType="Stretch">
+            <staticText>
+                <reportElement x="43" y="14" width="503" height="20" uuid="09745c64-97da-4866-9fe8-bc2871cb5172"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font size="12" isBold="true"/>
+                </textElement>
+                <text><![CDATA[ Sistema de Control Académico Kalum v1.0.0]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="215" y="34" width="157" height="20" uuid="b1ed3669-672e-4941-9e5c-5d4e95eb716c"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle"/>
+                <text><![CDATA[Guatemala, Guatemala]]></text>
+            </staticText>
+            <textField pattern="EEEEE dd MMMMM yyyy">
+                <reportElement x="472" y="59" width="100" height="20" uuid="8b30e3f3-9004-4623-b79c-f20579f0e91e"/>
+                <textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+            </textField>
+            <image>
+                <reportElement x="10" y="14" width="149" height="59" uuid="38d264ec-dad3-4005-a594-86831ccbd9a4"/>
+                <imageExpression><![CDATA[$P{LOGO_KALUM}]]></imageExpression>
+            </image>
+        </band>
+    </title>
+    <columnHeader>
+        <band height="61" splitType="Stretch">
+            <staticText>
+                <reportElement x="0" y="41" width="73" height="20" uuid="aabc1332-8101-4eec-8ee8-e2b5a06e4381"/>
+                <text><![CDATA[CARNÉ]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="73" y="41" width="100" height="20" uuid="e81a1141-ced0-42d3-8af6-410bc2d69e35"/>
+                <textElement verticalAlignment="Middle"/>
+                <text><![CDATA[EXPEDIENTE]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="173" y="41" width="116" height="20" uuid="13506ec4-640e-4666-9744-b809d7ba4957"/>
+                <textElement verticalAlignment="Middle"/>
+                <text><![CDATA[APELLIDOS]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="289" y="41" width="121" height="20" uuid="b95d018f-8ea9-4fab-9077-4cac297ede6e"/>
+                <textElement verticalAlignment="Middle"/>
+                <text><![CDATA[NOMBRES]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="410" y="41" width="100" height="20" uuid="6dd8e9f7-8457-4cb9-ab56-4c4c25794262"/>
+                <textElement verticalAlignment="Middle">
+                    <font isUnderline="false" isStrikeThrough="false"/>
+                </textElement>
+                <text><![CDATA[EMAIL]]></text>
+            </staticText>
+        </band>
+    </columnHeader>
+    <detail>
+        <band height="21" splitType="Stretch">
+            <rectangle radius="1">
+                <reportElement x="0" y="0" width="572" height="20" uuid="9243f4ff-28ae-43b0-bcdc-1fd3d45015db"/>
+            </rectangle>
+            <textField>
+                <reportElement x="0" y="0" width="73" height="20" uuid="4b5d2ba9-e431-4bea-8d72-1025bd890464"/>
+                <textFieldExpression><![CDATA[$F{carne}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="73" y="0" width="100" height="20" uuid="33db5d92-6031-4f38-af27-706178743dff"/>
+                <textFieldExpression><![CDATA[$F{no_expediente}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="173" y="0" width="116" height="20" uuid="01d7bc40-6cb3-4f0e-b9ab-db27afd1e02d"/>
+                <textFieldExpression><![CDATA[$F{apellidos}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="289" y="0" width="121" height="20" uuid="4753655e-e647-4975-bcc5-015822de3c6e"/>
+                <textFieldExpression><![CDATA[$F{nombres}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="410" y="0" width="162" height="20" uuid="70ede7a7-acde-4a59-a8c5-5e61a203ddc5"/>
+                <textFieldExpression><![CDATA[$F{email}]]></textFieldExpression>
+            </textField>
+        </band>
+    </detail>
+    <pageFooter>
+        <band height="67" splitType="Stretch">
+            <textField>
+                <reportElement x="238" y="47" width="100" height="20" uuid="0352699e-dbb6-4832-9eaf-3aeb56b7aff9"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle"/>
+                <textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+            </textField>
+            <image>
+                <reportElement x="159" y="13" width="260" height="34" uuid="41d25335-f80d-46fc-bbbc-cd00cb5c9972"/>
+                <imageExpression><![CDATA[$P{LOGO_FOOTER}]]></imageExpression>
+            </image>
+        </band>
+    </pageFooter>
+</jasperReport>

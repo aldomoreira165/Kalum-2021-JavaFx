@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="305.0" prefWidth="476.0" xmlns="http://javafx.com/javafx/11.0.1"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.kalum.core.controllers.LoginController">
+    <children>
+        <Label layoutX="92.0" layoutY="85.0" text="Usuario"/>
+        <Label layoutX="92.0" layoutY="152.0" prefHeight="26.0" prefWidth="74.0" text="Contraseña"/>
+        <Button layoutX="192.0" layoutY="209.0" mnemonicParsing="false" onAction="#autenticar" prefHeight="30.0"
+                prefWidth="107.0" text="Login"/>
+        <TextField fx:id="txtUsuario" layoutX="200.0" layoutY="81.0"/>
+        <PasswordField fx:id="txtPassword" layoutX="200.0" layoutY="152.0"/>
+    </children>
+</AnchorPane>
